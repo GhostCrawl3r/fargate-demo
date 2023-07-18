@@ -8,3 +8,16 @@ I found a really cool script online that applies automatic semantic versioning t
 I thought this was cool and may be of use for others.
 
 Check out the semantic versioning script [here](build/git_update.sh).
+
+## Run the docker image locally
+
+First build the docker image:
+
+```shell
+docker build . -t fargate-demo
+```
+
+Then run the image:
+```sh
+docker run --publish 8080:8080 fargate-demo
+```
