@@ -18,7 +18,7 @@ jobs:
       - name: Automatic tagging of releases
         id: increment-git-tag
         run: |
-          bash ./build/git_update.sh -v patch
+          bash ./build/git_update.sh -v minor
       - name: Login to AWS ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
@@ -31,3 +31,4 @@ jobs:
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
