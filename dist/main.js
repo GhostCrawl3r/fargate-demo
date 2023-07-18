@@ -8,6 +8,6 @@ async function bootstrap() {
     await app.listen(process.env.PORT);
 }
 bootstrap()
-    .then(() => console.log(`SUCCESS - View the graphql playground here: http://localhost:${process.env.PORT}/graphql`))
+    .then(() => console.log(`SUCCESS - server is running on PORT: ${process.env.PORT}.`))
     .catch((e) => console.log(e));
 //# sourceMappingURL=main.js.map

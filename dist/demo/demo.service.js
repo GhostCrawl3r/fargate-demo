@@ -6,16 +6,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.DemoService = void 0;
 const common_1 = require("@nestjs/common");
-const config_1 = require("@nestjs/config");
-const demo_module_1 = require("./demo/demo.module");
-let AppModule = class AppModule {
+let DemoService = class DemoService {
+    demo() {
+        return 'The demo route is working!';
+    }
 };
-AppModule = __decorate([
-    (0, common_1.Module)({
-        imports: [config_1.ConfigModule.forRoot(), demo_module_1.DemoModule],
-    })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+DemoService = __decorate([
+    (0, common_1.Injectable)()
+], DemoService);
+exports.DemoService = DemoService;
+//# sourceMappingURL=demo.service.js.map
