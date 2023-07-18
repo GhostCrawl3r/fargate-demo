@@ -1,7 +1,7 @@
 name: Build and push Docker image to AWS Fargate ECS instance
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 jobs:
   build:
     name: Build and push
