@@ -9,9 +9,11 @@ export class FargateDemoStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const repository = new ecr.Repository(this, 'fargate-demo-repository', {
-      repositoryName: 'fargate-demo-repository',
-    });
+    const repository = ecr.Repository.fromRepositoryName(
+      this,
+      'fargate-demo-repository',
+      'fargate-demo-repository',
+    );
 
     const vpc = new ec2.Vpc(this, 'MyVpc', {
       maxAzs: 3, // Default is all AZs in region
