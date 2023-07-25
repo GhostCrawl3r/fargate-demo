@@ -33,9 +33,8 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
       - name: Deploy CDK Infrastructure
-
         run: |
           cd infrastructure
           pnpm i
-          cdk synth
-          cdk deploy --require-approval=never
+          pnpm cdk synth
+          pnpm cdk deploy --require-approval=never
