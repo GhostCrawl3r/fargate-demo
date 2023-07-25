@@ -1,6 +1,6 @@
 FROM node:18 AS Production
 
-ENV PORT 8000
+ENV PORT 80
 
 RUN corepack enable
 RUN corepack prepare pnpm@latest --activate
@@ -14,6 +14,6 @@ RUN pnpm install;
 
 COPY . .
 
-EXPOSE 8000
+EXPOSE 80
 
 CMD ["sh","-c", "pnpm start"]

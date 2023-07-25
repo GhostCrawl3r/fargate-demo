@@ -28,7 +28,6 @@ export class FargateDemoStack extends cdk.Stack {
       this,
       'FargateDemoService',
       {
-        listenerPort: 8000,
         cluster: cluster, // Required
         cpu: 512, // Default is 256
         desiredCount: 6, // Default is 1
