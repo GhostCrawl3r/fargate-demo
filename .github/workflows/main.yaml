@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install PNPM
-        uses: pnpm/action-setup
+        uses: pnpm/action-setup@v2
       - name: Checkout
         uses: actions/checkout@v2
       - name: Configure AWS credentials
